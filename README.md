@@ -76,7 +76,7 @@ Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Network>Adapt
 
 Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Shared Folders et y ajouter les volumes à monter en virtualisation et cocher Auto-mount et permanent:
 
-![vm_volume](Document/config_vol.bmp)
+![vm_volume](Document/config_volu.bmp)
 
 ### Demarrer votre machine virtuelle
 
