@@ -32,7 +32,7 @@ BIOS-level hardware virtualization support must be enabled in the BIOS settings.
 
 **Attention** la version desktop n'est pas fonctionnelle sous windows home, famille et genere l'erreur suivante car les services Windows de virtualisation ne sont pas disponible sous windows home (famille) :
 
-!(error)[Document/error_VT-X.bmp]
+![error](Document/error_VT-X.bmp)
 
 
 https://docs.microsoft.com/fr-fr/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v
@@ -56,7 +56,8 @@ Dans le Gitbash d'une machine virtuelle virtualbox (--driver virtualbox) portant
 
 	$ docker-machine create --driver virtualbox vmDocker00
 	
-!(installation machine docker)[Document/install.bmp]
+![installation machine docker](Document/install.bmp)
+
 
 
 ## Ressources
