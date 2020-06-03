@@ -52,7 +52,7 @@ Docker est un logiciel libre permettant de lancer des applications dans des cont
 
 https://docs.docker.com/machine/reference/create/
 
-Dans le Gitbash d'une machine virtuelle virtualbox (--driver virtualbox) portant le nom de vmDocker00
+Creation d'une machine virtuelle virtualbox (--driver virtualbox) portant le nom de vmDocker00
 
 	$ docker-machine create --driver virtualbox vmDocker00
 	
