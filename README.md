@@ -112,19 +112,44 @@ Vous devrez définir les variables d'environnement à chaque démarrage d'un nouvea
 	$ docker info
 	$ docker run hello-world
 
-## Docker play
+## Docker play et command line
 
 https://www.docker.com/play-with-docker
 
+### docker system - Commande line
 
+Nettoie toutes les ressources - images, conteneurs, volumes et réseaux - qui sont en suspens (non associées à un conteneur) 
 
+	docker system prune
+	
+Supprimer en plus tous les conteneurs arrêtés et toutes les images non utilisées
 
+	docker system prune -a
+	
 
+### docker images - Commande line
 
+Lister les images
 
+	docker images -a
+	
+### docker-machine - Commande line
 
+Lister les machine
 
+	docker-machine ls
 
+Stopper une machine
+
+	docker-machine stop <Nom de la machine>
+	
+Demarrer une machine
+
+	docker-machine start <Nom de la machine>
+
+Supprimer une machine
+
+	docker-machine rm <Nom de la machine>
 
 
 ## Ressources
@@ -132,3 +157,5 @@ https://www.docker.com/play-with-docker
 https://www.sitepoint.com/docker-windows-10-home/
 
 https://www.docker.com/play-with-docker
+
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-fr
