@@ -112,10 +112,50 @@ Vous devrez définir les variables d'environnement à chaque démarrage d'un nouvea
 	$ docker info
 	$ docker run hello-world
 
-## Docker play et command line
+## Docker play
+
+Commencer par monter votre docker-machine avant de jouer. Sans omettre de configurer vos variable d'environnement
+
+	docker-machine env vmDocker00
+	eval $(docker-machine env vmDocker00 --shell linux)
 
 https://www.docker.com/play-with-docker
 
+Cliquer sur new instance
+Puis dans gitbash tapper:
+
+	docker run -d -p 80:80 docker/getting-started
+	
+- -d - exécuter le conteneur en mode détaché (en arrière-plan)
+- -p 80:80 - mapper le port 80 de l'hôte au port 80 dans le conteneur 
+- docker/getting-started - l'image à utiliser
+
+Equivalent à
+
+	docker run -dp 80:80 docker/getting-started
+
+- -dp equivalent à -d et -p
+
+Puis clique sur open port 80 
+
+Dans la dossier de votre projet.
+
+### Creation de l'image de conteneur de l'application
+Créez un fichier nommé Dockerfile avec le contenu suivant.
+
+
+	FROM node:12-alpine
+	WORKDIR /app
+	COPY . .
+	RUN yarn install --production
+	CMD ["node", "/app/src/index.js"]
+
+Créez l'image conteneur à l'aide de la docker buildcommande.
+
+	docker build -t getting-started .
+
+
+## Command line Docker
 ### docker system - Commande line
 
 Nettoie toutes les ressources - images, conteneurs, volumes et réseaux - qui sont en suspens (non associées à un conteneur) 
