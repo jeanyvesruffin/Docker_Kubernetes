@@ -3,12 +3,12 @@
 
 Docker est:
 
-* Flexible : m�me les applications les plus complexes peuvent �tre conteneuris�es.
-* L�ger : les conteneurs exploitent et partagent le noyau h�te, ce qui les rend beaucoup plus efficaces en termes de ressources syst�me que les machines virtuelles.
-* Portable : vous pouvez cr�er localement, d�ployer sur le cloud et ex�cuter n'importe o�.
-* Couplage faible : les conteneurs sont hautement autonomes et encapsul�s, vous permettant de remplacer ou de mettre � niveau l'un sans perturber les autres.
-* �volutif : vous pouvez augmenter et distribuer automatiquement des r�pliques de conteneurs dans un centre de donn�es.
-* S�curis� : les conteneurs appliquent des contraintes agressives et des isolements aux processus sans aucune configuration requise de la part de l'utilisateur.
+* Flexible : meme les applications les plus complexes peuvent etre conteneurisees.
+* Loger : les conteneurs exploitent et partagent le noyau hete, ce qui les rend beaucoup plus efficaces en termes de ressources systeme que les machines virtuelles.
+* Portable : vous pouvez creer localement, deployer sur le cloud et executer n'importe ou.
+* Couplage faible : les conteneurs sont hautement autonomes et encapsules, vous permettant de remplacer ou de mettre a niveau l'un sans perturber les autres.
+* evolutif : vous pouvez augmenter et distribuer automatiquement des repliques de conteneurs dans un centre de donnees.
+* Securise : les conteneurs appliquent des contraintes agressives et des isolements aux processus sans aucune configuration requise de la part de l'utilisateur.
 
 Kubernetes est:
 
@@ -41,7 +41,7 @@ https://docs.microsoft.com/fr-fr/virtualization/hyper-v-on-windows/quick-start/e
 
 	C:\ choco install virtualbox
 	
-Oracle VM est le serveur de virtualisation. Oracle VM Server pour machines x86 inclut l'hyperviseur libre et open-source Xen, supporte Microsoft Windows, diff�rentes distributions Linux2 (Ubuntu, Debian, Fedora, openSUSE) et int�gre une console de gestion Web. Oracle VM met en �uvre la pile d'applications Oracle Applications test�es et certifi�es pour un environnement de virtualisation en entreprise.
+Oracle VM est le serveur de virtualisation. Oracle VM Server pour machines x86 inclut l'hyperviseur libre et open-source Xen, supporte Microsoft Windows, differentes distributions Linux2 (Ubuntu, Debian, Fedora, openSUSE) et intogre une console de gestion Web. Oracle VM met en ouvre la pile d'applications Oracle Applications testees et certifiees pour un environnement de virtualisation en entreprise.
 	
 	
 	C:\ choco install docker-machine
@@ -61,7 +61,7 @@ Creation d'une machine virtuelle virtualbox (--driver virtualbox) portant le nom
 
 ### Configuration ports de la VM
 
-Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Network>Adapter1>Port Forwarding et y renseigner les ports de votre VM qui seront expos�s lorts de l'execution de votre dock:
+Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Network>Adapter1>Port Forwarding et y renseigner les ports de votre VM qui seront exposes lorts de l'execution de votre dock:
 
 
 ![vm_ports](Document/vm_ports.bmp)
@@ -74,7 +74,7 @@ Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Network>Adapt
 
 ### Configuration des volumes
 
-Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Shared Folders et y ajouter les volumes � monter en virtualisation et cocher Auto-mount et permanent:
+Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Shared Folders et y ajouter les volumes a monter en virtualisation et cocher Auto-mount et permanent:
 
 ![vm_volume](Document/config_volu.bmp)
 
@@ -89,7 +89,7 @@ Dans Oracle VM, selectionner votre machine (vmDocker00) > Settings>Shared Folder
 	
 ![dock_machine_run](Document/dock_machine_run.bmp)
 
-Vous devrez d�finir les variables d'environnement � chaque d�marrage d'un nouveau terminal Git Bash. Si vous souhaitez �viter cela, vous pouvez copier la sortie eval et l'enregistrer dans votre fichier .bashrc. �a devrait ressembler a quelque chose comme ca:
+Vous devrez definir les variables d'environnement a chaque demarrage d'un nouveau terminal Git Bash. Si vous souhaitez eviter cela, vous pouvez copier la sortie eval et l'enregistrer dans votre fichier .bashrc. cela devrait ressembler a quelque chose comme ca:
 
 	export DOCKER_TLS_VERIFY="1"
 	export DOCKER_HOST="tcp://192.168.99.103:2376"
@@ -97,7 +97,7 @@ Vous devrez d�finir les variables d'environnement � chaque d�marrage d'un 
 	export DOCKER_MACHINE_NAME="vmDocker00"
 	export COMPOSE_CONVERT_WINDOWS_PATHS="true"
 
-**IMPORTANT**: pour DOCKER_CERT_PATH, vous devrez modifier le chemin d'acc�s au fichier Linux au format de chemin d'acc�s Windows. Notez �galement qu'il est possible que l'adresse IP attribu�e soit diff�rente de celle que vous avez enregistr�e � chaque d�marrage de la machine virtuelle par d�faut.
+**IMPORTANT**: pour DOCKER_CERT_PATH, vous devrez modifier le chemin d'accas au fichier Linux au format de chemin d'acces Windows. Notez egalement qu'il est possible que l'adresse IP attribuee soit differente de celle que vous avez enregistree a chaque demarrage de la machine virtuelle par defaut.
 
 
 ## Configuration des outils docker
@@ -126,22 +126,22 @@ Puis dans gitbash tapper:
 
 	docker run -d -p 80:80 docker/getting-started
 	
-- -d - ex�cuter le conteneur en mode d�tach� (en arri�re-plan)
-- -p 80:80 - mapper le port 80 de l'h�te au port 80 dans le conteneur 
-- docker/getting-started - l'image � utiliser
+- -d - executer le conteneur en mode detache (en arriere-plan)
+- -p 80:80 - mapper le port 80 de l'hote au port 80 dans le conteneur 
+- docker/getting-started - l'image a utiliser
 
-Equivalent �
+Equivalent :
 
 	docker run -dp 80:80 docker/getting-started
 
-- -dp equivalent � -d et -p
+- -dp equivalent : -d et -p
 
 Puis clique sur open port 80 
 
 Dans la dossier de votre projet.
 
 ### Creation de l'image de conteneur de l'application
-Cr�ez un fichier nomm� Dockerfile avec le contenu suivant.
+Creez un fichier nomme Dockerfile avec le contenu suivant.
 
 
 	FROM node:12-alpine
@@ -150,7 +150,7 @@ Cr�ez un fichier nomm� Dockerfile avec le contenu suivant.
 	RUN yarn install --production
 	CMD ["node", "/app/src/index.js"]
 
-Cr�ez l'image conteneur � l'aide de la docker buildcommande.
+Creez l'image conteneur a l'aide de la docker buildcommande.
 
 	docker build -t getting-started .
 
@@ -180,11 +180,11 @@ sudo systemctl stop docker
 ## Command line Docker
 ### docker system - Commande line
 
-Nettoie toutes les ressources - images, conteneurs, volumes et r�seaux - qui sont en suspens (non associ�es � un conteneur) 
+Nettoie toutes les ressources - images, conteneurs, volumes et reseaux - qui sont en suspens (non associees a un conteneur) 
 
 	docker system prune
 	
-Supprimer en plus tous les conteneurs arr�t�s et toutes les images non utilis�es
+Supprimer en plus tous les conteneurs arretes et toutes les images non utilisees
 
 	docker system prune -a
 	
