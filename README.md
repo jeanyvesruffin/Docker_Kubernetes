@@ -15,6 +15,33 @@ Kubernetes est:
 https://www.redhat.com/fr/topics/containers/what-is-kubernetes#:~:text=Le%20principal%20avantage%20de%20la,de%20machines%20physiques%20ou%20virtuelles.
 
 
+<!-- TOC -->
+
+- [Docker_Kubernetes](#docker_kubernetes)
+    - [Installation Docker desktop pour windows home](#installation-docker-desktop-pour-windows-home)
+        - [Installation des packages chocolateys](#installation-des-packages-chocolateys)
+    - [Creation d'une machine virtuel](#creation-dune-machine-virtuel)
+        - [Configuration ports de la VM](#configuration-ports-de-la-vm)
+        - [Suppression erreurs parametres graphique de la VM](#suppression-erreurs-parametres-graphique-de-la-vm)
+        - [Configuration des volumes](#configuration-des-volumes)
+        - [Demarrer votre machine virtuelle](#demarrer-votre-machine-virtuelle)
+        - [Configuration variables d'environnement docker](#configuration-variables-denvironnement-docker)
+    - [Configuration des outils docker](#configuration-des-outils-docker)
+        - [installation chocolatey](#installation-chocolatey)
+    - [Tester votre docker](#tester-votre-docker)
+    - [Docker play](#docker-play)
+        - [Creation de l'image de conteneur de l'application](#creation-de-limage-de-conteneur-de-lapplication)
+    - [Installation docker sous linux ubuntu](#installation-docker-sous-linux-ubuntu)
+    - [Command line Docker](#command-line-docker)
+        - [docker system - Commande line](#docker-system---commande-line)
+        - [docker images - Commande line](#docker-images---commande-line)
+        - [docker-machine - Commande line](#docker-machine---commande-line)
+    - [Ressources](#ressources)
+
+<!-- /TOC -->
+
+
+
 ## Installation Docker desktop pour windows home
 
 **Attention** cette installation n'est pas standar.
@@ -167,8 +194,6 @@ Pour check le status docker
 sudo systemctl status docker 
 ```
 
-
-
 Pour demarrer/ arreter docker
 
 ```cmd
@@ -223,3 +248,14 @@ https://www.sitepoint.com/docker-windows-10-home/
 https://www.docker.com/play-with-docker
 
 https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-fr
+
+
+Utiliser une VM est une bonne idée si tu est sous Windows, mais je ne te conseil pas du tout boot2docker.
+Ce que je te recommande pour fiabiliser / simplifier ton installation :
+Utilise un hyperviseur que tu connais : VirtualBox / Oracle / n’importe quoi tant que tu connais un minimum (pour la configuration réseau)
+Installe une VM Ubuntu Serveur (pas besoin d’interface graphique pour ce que tu vas faire)
+Active le serveur SSH de la VM Ubuntu
+Configure une règle NAT pour binder le port 22 de ta VM sur le port 22 de ta machine Windows
+Connecte toi avec Putty depuis ton Windows en SSH à ta VM : tu sera dans ton environnement, ave le copier / coller etc et tu n’auras plus de problème de clavier
+Procède à l’installation de Docker sur la VM grâce à ton terminal SSH
+Créé un snapshot dès que tout est fonctionnel pour pas avoir à refaire tout ça en cas de problème
